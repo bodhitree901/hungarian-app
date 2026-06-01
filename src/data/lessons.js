@@ -1,0 +1,1317 @@
+// All lesson content is grounded strictly in class notes and reference docs.
+// Tier 4-5 may draw on vocabulary from OTHER lessons' source docs,
+// but never introduce words not taught in class.
+//
+// Source docs:
+// [A] 21/04 lesson notes  — greetings, travel, time, numbers, verbs, free time
+// [B] 24/04 lesson notes  — kér, -val/-vel, food & drink
+// [C] VAL/VEL reference   — apával, barátommal, kutyával, anyámmal
+// [D] LENNI/VAN reference — full conjugation, van rules, éhes, boldog, beteg
+// [E] Verb conjugation    — indefinite/definite tables, vowel harmony, sz→l
+
+export const lessons = [
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L1 — Greetings & Basic Questions  [source: A]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l1",
+    title: "Greetings & Questions",
+    description: "szia, köszönöm, hogy vagy, milyen…",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l1-t1-e1", type: "multiple_choice",
+            prompt: "What does 'szia' mean?",
+            options: ["Goodbye","Thank you","Hi / Hello","How are you?"], answer: "Hi / Hello" },
+          { id: "l1-t1-e2", type: "multiple_choice",
+            prompt: "What does 'köszönöm szépen' mean?",
+            options: ["Good morning","Thank you very much","Goodbye","Please"], answer: "Thank you very much" },
+          { id: "l1-t1-e3", type: "match_pairs", prompt: "Match each phrase.",
+            pairs: [["szia","hi / hello"],["köszönöm","thank you"],["viszontlátásra","goodbye"],["hogy vagy?","how are you?"]] },
+          { id: "l1-t1-e4", type: "multiple_choice", prompt: "What does 'milyen' mean?",
+            options: ["When","Who","What kind / how","Where"], answer: "What kind / how" },
+          { id: "l1-t1-e5", type: "image_pick", prompt: "Which word matches this feeling?",
+            emoji: "😊", options: ["boldog","fáradt","beteg","éhes"], answer: "boldog" },
+          { id: "l1-t1-e6", type: "image_pick", prompt: "Which word matches this feeling?",
+            emoji: "😴", options: ["boldog","szabad","fáradt","éhes"], answer: "fáradt" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l1-t2-e1", type: "multiple_choice", prompt: "How do you say 'Goodbye'?",
+            options: ["szia","szió","hogy vagy","viszontlátásra"], answer: "viszontlátásra" },
+          { id: "l1-t2-e2", type: "multiple_choice", prompt: "How do you ask 'How is the day?'",
+            options: ["Hogy vagy?","Milyen a nap?","Milyen az utazás?","Mizu?"], answer: "Milyen a nap?" },
+          { id: "l1-t2-e3", type: "image_pick", prompt: "Pick the word for a casual hello.",
+            emoji: "👋", options: ["szia","viszontlátásra","köszönöm","milyen"], answer: "szia" },
+          { id: "l1-t2-e4", type: "multiple_choice", prompt: "What does 'mizu' mean?",
+            options: ["Goodbye","What's up?","How are you?","Good morning"], answer: "What's up?" },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l1-t3-e1", type: "type_answer", prompt: "Type the Hungarian for 'thank you very much'.",
+            answer: "köszönöm szépen", hint: "köszönöm + szépen" },
+          { id: "l1-t3-e2", type: "word_order", prompt: "Build: 'How is the trip?'",
+            words: ["utazás?","milyen","az"], answer: "milyen az utazás?" },
+          { id: "l1-t3-e3", type: "type_answer", prompt: "Translate: 'Have a good trip!'",
+            answer: "jó utazást", acceptableAnswers: ["jó utazást!"], hint: "jó + utazást" },
+          { id: "l1-t3-e4", type: "word_order", prompt: "Build: 'How are you?'",
+            words: ["vagy?","hogy"], answer: "hogy vagy?" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // Using fáradt [A] and boldog/éhes [D] — all class vocab
+        exercises: [
+          { id: "l1-t4-e1", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Szia! Hogy vagy?" }, { speaker: "Te", text: "Fáradt ___, köszönöm.", answer: "vagyok" }],
+            answer: "vagyok", options: ["vagyok","vagy","van","vagyunk"],
+            hint: "én vagyok — I am" },
+          { id: "l1-t4-e2", type: "multiple_choice",
+            prompt: "What does 'éhes vagyok' mean? (éhes = hungry, from your notes)",
+            options: ["I am tired","I am happy","I am hungry","I am sick"], answer: "I am hungry" },
+          { id: "l1-t4-e3", type: "dialogue",
+            lines: [{ speaker: "Te", text: "Hogy vagy?" }, { speaker: "Anna", text: "___ vagyok, köszönöm!", answer: "Boldog" }],
+            answer: "Boldog", options: ["Boldog","Fáradt","Éhes","Milyen"],
+            hint: "boldog = happy" },
+          { id: "l1-t4-e4", type: "type_answer", prompt: "Translate: 'I am tired, thank you.'",
+            answer: "fáradt vagyok, köszönöm", hint: "fáradt + vagyok" },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Using full lenni [D] + milyen sentences [A]
+        exercises: [
+          { id: "l1-t5-e1", type: "word_order", prompt: "Build: 'I am happy and not tired.'",
+            words: ["és","boldog","nem","vagyok","fáradt"], answer: "boldog vagyok és nem fáradt",
+            acceptableAnswers: ["nem fáradt vagyok és boldog","boldog és nem fáradt vagyok"] },
+          { id: "l1-t5-e2", type: "type_answer", prompt: "Translate: 'Are you hungry?' (éhes = hungry)",
+            answer: "éhes vagy?", acceptableAnswers: ["éhes vagy"] },
+          { id: "l1-t5-e3", type: "dialogue",
+            lines: [
+              { speaker: "Anna", text: "Hogy vagy? Éhes vagy?" },
+              { speaker: "Te", text: "Igen, ___ vagyok.", answer: "éhes" },
+            ],
+            answer: "éhes", options: ["éhes","fáradt","boldog","milyen"], hint: "éhes = hungry" },
+          { id: "l1-t5-e4", type: "type_answer", prompt: "Translate: 'How is the day? I am happy!'",
+            answer: "milyen a nap? boldog vagyok!",
+            acceptableAnswers: ["milyen a nap! boldog vagyok"] },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L2 — Parts of the Day  [source: A]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l2",
+    title: "Parts of the Day",
+    description: "reggel, dél, délután, este",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l2-t1-e1", type: "image_pick", prompt: "What time of day?",
+            emoji: "🌅", answer: "reggel", options: ["reggel","dél","délután","este"] },
+          { id: "l2-t1-e2", type: "image_pick", prompt: "What time of day?",
+            emoji: "🌙", answer: "este", options: ["reggel","dél","este","délután"] },
+          { id: "l2-t1-e3", type: "match_pairs", prompt: "Match each word.",
+            pairs: [["reggel","morning"],["dél","noon"],["délután","afternoon"],["este","evening"]] },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l2-t2-e1", type: "multiple_choice", prompt: "How do you say 'afternoon'?",
+            options: ["reggel","dél","este","délután"], answer: "délután" },
+          { id: "l2-t2-e2", type: "multiple_choice", prompt: "How do you say 'I travel in the morning'?",
+            options: ["Este utazok.","Reggel utazok.","Dél utazok.","Délután utazol."], answer: "Reggel utazok." },
+          { id: "l2-t2-e3", type: "image_pick", prompt: "What time of day?",
+            emoji: "☀️", answer: "dél", options: ["reggel","dél","délután","este"] },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l2-t3-e1", type: "word_order", prompt: "Build: 'I am free in the morning.'",
+            words: ["vagyok","szabad","reggel"], answer: "reggel szabad vagyok" },
+          { id: "l2-t3-e2", type: "type_answer", prompt: "Translate: 'Do you travel in the evening?' (utazol = you travel)",
+            answer: "este utazol?", acceptableAnswers: ["este utazol"] },
+          { id: "l2-t3-e3", type: "word_order", prompt: "Build: 'afternoon and evening'",
+            words: ["és","délután","este"], answer: "délután és este" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // Using fáradt [A] + vagyok [D] — no new words
+        exercises: [
+          { id: "l2-t4-e1", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Hogy vagy reggel?" }, { speaker: "Te", text: "Reggel mindig ___.", answer: "fáradt vagyok" }],
+            answer: "fáradt vagyok", options: ["fáradt vagyok","szabad vagyok","boldog vagyok","este vagyok"],
+            hint: "fáradt = tired" },
+          { id: "l2-t4-e2", type: "multiple_choice",
+            prompt: "Complete: 'Este ___ szabad vagyok.' (In the evening I am free.)",
+            options: ["reggel","dél","este","délután"], answer: "este",
+            note: "The time word goes first." },
+          { id: "l2-t4-e3", type: "word_order", prompt: "Build: 'In the morning I am tired, in the evening I am free.'",
+            words: ["este","fáradt","szabad","reggel","vagyok,","vagyok"], answer: "reggel fáradt vagyok, este szabad vagyok" },
+          { id: "l2-t4-e4", type: "type_answer", prompt: "Translate: 'When are you free?' (mikor = when)",
+            answer: "mikor vagy szabad?", acceptableAnswers: ["mikor vagy szabad"] },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Combining parts of day with szabad/fáradt + holnap [A]
+        exercises: [
+          { id: "l2-t5-e1", type: "type_answer", prompt: "Translate: 'Tomorrow afternoon I am free.'",
+            answer: "holnap délután szabad vagyok", acceptableAnswers: ["holnap délután szabad vagyok."] },
+          { id: "l2-t5-e2", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Mikor vagy szabad holnap?" }, { speaker: "Te", text: "___ és este.", answer: "Délután" }],
+            answer: "Délután", options: ["Délután","Reggel","Dél","Holnap"] },
+          { id: "l2-t5-e3", type: "word_order", prompt: "Build: 'Tomorrow morning I travel and in the evening I am free.'",
+            words: ["utazok","este","holnap","szabad","reggel","és","vagyok"],
+            answer: "holnap reggel utazok és este szabad vagyok" },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L3 — Numbers 1–10  [source: A]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l3",
+    title: "Numbers 1–10",
+    description: "egy, kettő, három… tíz",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l3-t1-e1", type: "match_pairs", prompt: "Match number to word.",
+            pairs: [["egy","1"],["három","3"],["öt","5"],["tíz","10"]] },
+          { id: "l3-t1-e2", type: "match_pairs", prompt: "Match number to word.",
+            pairs: [["kettő","2"],["négy","4"],["hat","6"],["kilenc","9"]] },
+          { id: "l3-t1-e3", type: "multiple_choice", prompt: "What number is 'nyolc'?",
+            options: ["6","7","8","9"], answer: "8" },
+          { id: "l3-t1-e4", type: "image_pick", prompt: "How many?",
+            emoji: "1️⃣", options: ["egy","kettő","három","négy"], answer: "egy" },
+          { id: "l3-t1-e5", type: "image_pick", prompt: "How many?",
+            emoji: "5️⃣", options: ["három","négy","öt","hat"], answer: "öt" },
+          { id: "l3-t1-e6", type: "image_pick", prompt: "How many?",
+            emoji: "🔟", options: ["nyolc","kilenc","tíz","hét"], answer: "tíz" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l3-t2-e1", type: "multiple_choice", prompt: "How do you say '7'?",
+            options: ["hat","hét","nyolc","kilenc"], answer: "hét" },
+          { id: "l3-t2-e2", type: "multiple_choice", prompt: "'Hét' has a second meaning. What?",
+            options: ["Month","Day","Week","Year"], answer: "Week" },
+          { id: "l3-t2-e3", type: "multiple_choice", prompt: "How do you say '4'?",
+            options: ["öt","három","négy","hat"], answer: "négy" },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l3-t3-e1", type: "type_answer", prompt: "Spell out the number 9.",
+            answer: "kilenc" },
+          { id: "l3-t3-e2", type: "type_answer", prompt: "Spell out the number 8.",
+            answer: "nyolc" },
+          { id: "l3-t3-e3", type: "word_order", prompt: "Put in order: one, two, three",
+            words: ["három","egy","kettő"], answer: "egy kettő három" },
+          { id: "l3-t3-e4", type: "type_answer", prompt: "Spell out the number 6.",
+            answer: "hat" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // Numbers used in time (-kor) [A] and ordering (kérek) [B]
+        exercises: [
+          { id: "l3-t4-e1", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Mikor utazol?" }, { speaker: "Te", text: "___ utazok.", answer: "Háromkor" }],
+            answer: "Háromkor", options: ["Háromkor","Három","Háromban","Háromra"],
+            hint: "három + kor" },
+          { id: "l3-t4-e2", type: "multiple_choice",
+            prompt: "Complete: 'Kérek ___ kávét.' (I'd like three coffees.)",
+            options: ["kettő","három","háromkor","harmadik"], answer: "három",
+            note: "Numbers before nouns don't take -kor" },
+          { id: "l3-t4-e3", type: "type_answer", prompt: "Say 'at five' using -kor.",
+            answer: "ötkor" },
+          { id: "l3-t4-e4", type: "word_order", prompt: "Build: 'I would like two coffees.'",
+            words: ["kávét","kérek","két"], answer: "kérek két kávét",
+            note: "két is used before nouns (not kettő)" },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Numbers with van/nincs [D] + counting in context
+        exercises: [
+          { id: "l3-t5-e1", type: "multiple_choice",
+            prompt: "Complete: 'Van ___ kérdésem.' (I have one question.) [D]",
+            options: ["egy","egyet","egykor","egyben"], answer: "egy" },
+          { id: "l3-t5-e2", type: "type_answer", prompt: "Translate: 'I have two questions.' (kérdés = question, van = have)",
+            answer: "van két kérdésem", hint: "van + két + kérdésem" },
+          { id: "l3-t5-e3", type: "dialogue",
+            lines: [{ speaker: "Pincér", text: "Hány kávét kér?" }, { speaker: "Te", text: "Kérek ___ kávét, kérem.", answer: "három" }],
+            answer: "három", options: ["három","háromkor","kettő","tíz"] },
+          { id: "l3-t5-e4", type: "word_order", prompt: "Build: 'I have five questions.'",
+            words: ["öt","van","kérdésem"], answer: "van öt kérdésem" },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L4 — Saying the Time with -kor  [source: A]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l4",
+    title: "Saying the Time — -kor",
+    description: "egykor, kettőkor, tízkor — 'at' a time",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l4-t1-e1", type: "multiple_choice", prompt: "What does '-kor' express?",
+            options: ["In / inside","At (a time)","After","Into / to"], answer: "At (a time)" },
+          { id: "l4-t1-e2", type: "match_pairs", prompt: "Match each time expression.",
+            pairs: [["egykor","at one"],["kettőkor","at two"],["tízkor","at ten"],["hétkor","at seven"]] },
+          { id: "l4-t1-e3", type: "multiple_choice", prompt: "What does 'ma reggel tízkor' mean?",
+            options: ["Tomorrow evening at ten","Today at ten in the morning","Yesterday at two","This afternoon at ten"],
+            answer: "Today at ten in the morning" },
+          { id: "l4-t1-e4", type: "image_pick", prompt: "What time is shown? (use -kor)",
+            emoji: "🕒", options: ["háromkor","ötkor","hatkor","kettőkor"], answer: "háromkor" },
+          { id: "l4-t1-e5", type: "image_pick", prompt: "What time is shown? (use -kor)",
+            emoji: "🕙", options: ["egykor","hétkor","tízkor","négykor"], answer: "tízkor" },
+          { id: "l4-t1-e6", type: "image_pick", prompt: "What time is shown? (use -kor)",
+            emoji: "🕖", options: ["ötkor","hatkor","hétkor","nyolckor"], answer: "hatkor" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l4-t2-e1", type: "multiple_choice", prompt: "How do you say 'at seven'?",
+            options: ["hétben","héten","hétkor","hétre"], answer: "hétkor" },
+          { id: "l4-t2-e2", type: "multiple_choice", prompt: "How do you ask 'when are you travelling?'",
+            options: ["Hova utazol?","Mikor utazol?","Hogy utazol?","Mit utazol?"], answer: "Mikor utazol?" },
+          { id: "l4-t2-e3", type: "multiple_choice", prompt: "How do you say 'at five'?",
+            options: ["ötben","ötkor","ötre","ötnél"], answer: "ötkor" },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l4-t3-e1", type: "word_order", prompt: "Build: 'Today at ten in the morning.'",
+            words: ["tízkor","ma","reggel"], answer: "ma reggel tízkor" },
+          { id: "l4-t3-e2", type: "type_answer", prompt: "Say 'at two' using -kor.",
+            answer: "kettőkor", hint: "kettő + kor" },
+          { id: "l4-t3-e3", type: "type_answer", prompt: "Translate: 'When are you travelling?'",
+            answer: "mikor utazol?", acceptableAnswers: ["mikor utazol"] },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // Time + szabad/fáradt [A+D] — no new words
+        exercises: [
+          { id: "l4-t4-e1", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Mikor vagy szabad?" }, { speaker: "Te", text: "Háromkor ___ vagyok.", answer: "szabad" }],
+            answer: "szabad", options: ["szabad","fáradt","boldog","utazok"], hint: "szabad = free" },
+          { id: "l4-t4-e2", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Mikor utazol?" }, { speaker: "Te", text: "Ma reggel ___.", answer: "tízkor" }],
+            answer: "tízkor", options: ["tízkor","tíz","tízban","tíz után"] },
+          { id: "l4-t4-e3", type: "word_order", prompt: "Build: 'I am free at three tomorrow.'",
+            words: ["vagyok","szabad","holnap","háromkor"], answer: "holnap háromkor szabad vagyok" },
+          { id: "l4-t4-e4", type: "type_answer", prompt: "Translate: 'I travel at ten in the morning.'",
+            answer: "reggel tízkor utazok", acceptableAnswers: ["tízkor utazok reggel","ma reggel tízkor utazok"] },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Combining time + után [A] + utazni
+        exercises: [
+          { id: "l4-t5-e1", type: "multiple_choice",
+            prompt: "What does 'óra után' mean?",
+            options: ["Before class","At the hour","After class","During class"], answer: "After class",
+            note: "óra = lesson/class" },
+          { id: "l4-t5-e2", type: "word_order", prompt: "Build: 'After class I travel at three.'",
+            words: ["háromkor","óra","utazok","után"], answer: "óra után háromkor utazok" },
+          { id: "l4-t5-e3", type: "dialogue",
+            lines: [
+              { speaker: "Anna", text: "Mikor találkozunk?" },
+              { speaker: "Te", text: "Holnap ___ szabad vagyok.", answer: "délután" },
+            ],
+            answer: "délután", options: ["délután","reggel","este","háromkor"] },
+          { id: "l4-t5-e4", type: "type_answer", prompt: "Translate: 'After a walk I am free at five.'",
+            answer: "séta után ötkor szabad vagyok", hint: "séta után + ötkor + szabad vagyok" },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L5 — Location: -ban/-ben and -ba/-be  [source: A]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l5",
+    title: "Location: -ban/-ben & -ba/-be",
+    description: "in (somewhere) vs. into / to (somewhere)",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l5-t1-e1", type: "multiple_choice", prompt: "What does '-ban / -ben' express?",
+            options: ["Into / to","At a time","In (being inside)","After"], answer: "In (being inside)" },
+          { id: "l5-t1-e2", type: "multiple_choice", prompt: "What does '-ba / -be' express?",
+            options: ["In (stationary)","Into / to (movement)","After","At a time"], answer: "Into / to (movement)" },
+          { id: "l5-t1-e3", type: "match_pairs", prompt: "Match suffix to meaning.",
+            pairs: [["-ban / -ben","in (location)"],["-ba / -be","into / to (movement)"],["-kor","at (time)"],["után","after"]] },
+          { id: "l5-t1-e4", type: "image_pick", prompt: "I am IN the house — which suffix?",
+            emoji: "🏠", options: ["házban","házba","házkor","ház után"], answer: "házban" },
+          { id: "l5-t1-e5", type: "image_pick", prompt: "I travel TO London — which suffix?",
+            emoji: "✈️", options: ["Londonban","Londonkor","Londonba","London után"], answer: "Londonba" },
+          { id: "l5-t1-e6", type: "image_pick", prompt: "I am IN the school — which is correct?",
+            emoji: "🏫", options: ["iskolába","iskolaban","iskolában","iskolára"], answer: "iskolában" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l5-t2-e1", type: "multiple_choice", prompt: "'I travel TO Arizona' — suffix?",
+            options: ["Arizónában","Arizónára","Arizónába","Arizónakor"], answer: "Arizónába",
+            note: "Movement → destination → -ba/-be" },
+          { id: "l5-t2-e2", type: "multiple_choice", prompt: "Key difference between -ban and -ba?",
+            options: ["Vowel harmony only","One for people one for places","Static (inside) vs movement (going to)","They mean the same"],
+            answer: "Static (inside) vs movement (going to)" },
+          { id: "l5-t2-e3", type: "multiple_choice", prompt: "'I AM IN London.' Which suffix on London?",
+            options: ["-ba","-ban","-kor","-ra"], answer: "-ban" },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l5-t3-e1", type: "word_order", prompt: "Build: 'I travel today to Arizona.'",
+            words: ["Arizónába","utazok","ma"], answer: "ma utazok Arizónába" },
+          { id: "l5-t3-e2", type: "type_answer", prompt: "Translate: 'I travel to London.' (London + -ba)",
+            answer: "Londonba utazok", acceptableAnswers: ["utazok londonba","londonba utazok"] },
+          { id: "l5-t3-e3", type: "type_answer", prompt: "Translate: 'Do you travel in the evening to Arizona?'",
+            answer: "este utazol Arizónába?", acceptableAnswers: ["este utazol arizónába","arizónába utazol este?"] },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // Using 'itt' and 'ott' from [D]: "Mi vagyunk itt", "Hol vagy"
+        exercises: [
+          { id: "l5-t4-e1", type: "multiple_choice", prompt: "What does 'itt' mean? (from your lenni notes: 'Mi vagyunk itt')",
+            options: ["There","Here","Near","Inside"], answer: "Here" },
+          { id: "l5-t4-e2", type: "multiple_choice", prompt: "What does 'ott' mean?",
+            options: ["Here","Now","There","Inside"], answer: "There" },
+          { id: "l5-t4-e3", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Hol vagy?" }, { speaker: "Te", text: "___ vagyok, Londonban.", answer: "Itt" }],
+            answer: "Itt", options: ["Itt","Ott","Ma","Este"], hint: "itt = here" },
+          { id: "l5-t4-e4", type: "word_order", prompt: "Build: 'I am here in London.'",
+            words: ["Londonban","itt","vagyok"], answer: "itt vagyok Londonban" },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Location with van [D]: "A gyerek az iskolában van", "Hol vagy"
+        exercises: [
+          { id: "l5-t5-e1", type: "multiple_choice",
+            prompt: "Complete: 'A gyerek az iskolá___ van.' (The child is at school.) [D]",
+            options: ["ba","ban","be","ben"], answer: "ban", note: "iskolában = in the school (stationary)" },
+          { id: "l5-t5-e2", type: "multiple_choice",
+            prompt: "From your notes: 'A kulcs a zsebemben van.' What does this mean?",
+            options: ["The key is in my bag","The key is in my pocket","The key is on the table","The key is in the school"],
+            answer: "The key is in my pocket" },
+          { id: "l5-t5-e3", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Hol van a kávé?" }, { speaker: "Te", text: "Ott van, az ___ van.", answer: "asztalon" }],
+            answer: "asztalon", options: ["asztalon","iskolában","zsebemben","Arizónában"],
+            hint: "asztal = table, -on = on top of" },
+          { id: "l5-t5-e4", type: "type_answer", prompt: "Translate: 'Where are you?' (hol = where)",
+            answer: "hol vagy?", acceptableAnswers: ["hol vagy"] },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L6 — Common Verbs (Infinitive)  [source: A, B]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l6",
+    title: "Common Verbs",
+    description: "olvasni, sétálni, főzni, énekelni…",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l6-t1-e1", type: "image_pick", prompt: "What action?",
+            emoji: "📚", answer: "olvasni", options: ["olvasni","főzni","sétálni","énekelni"] },
+          { id: "l6-t1-e2", type: "image_pick", prompt: "What action?",
+            emoji: "🎵", answer: "énekelni", options: ["nézni","sportolni","énekelni","főzni"] },
+          { id: "l6-t1-e3", type: "match_pairs", prompt: "Match each verb.",
+            pairs: [["olvasni","to read"],["főzni","to cook"],["sétálni","to walk"],["énekelni","to sing"]] },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l6-t2-e1", type: "multiple_choice", prompt: "How do you say 'to cook'?",
+            options: ["olvasni","sétálni","főzni","énekelni"], answer: "főzni" },
+          { id: "l6-t2-e2", type: "match_pairs", prompt: "Match each verb.",
+            pairs: [["nézni","to watch"],["dolgozni","to work"],["tanulni","to study"],["sportolni","to do sports"]] },
+          { id: "l6-t2-e3", type: "image_pick", prompt: "What action?",
+            emoji: "🏃", answer: "sportolni", options: ["olvasni","énekelni","sportolni","főzni"] },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l6-t3-e1", type: "type_answer", prompt: "What is the infinitive of 'to read'?", answer: "olvasni" },
+          { id: "l6-t3-e2", type: "word_order", prompt: "Build: 'I like walking with you.'",
+            words: ["sétálni","szeretek","veled"], answer: "szeretek sétálni veled" },
+          { id: "l6-t3-e3", type: "type_answer", prompt: "What is the infinitive of 'to work'?", answer: "dolgozni" },
+          { id: "l6-t3-e4", type: "type_answer", prompt: "What is the infinitive of 'to watch'?", answer: "nézni" },
+          { id: "l6-t3-e5", type: "image_pick", prompt: "What action is this?",
+            emoji: "💻", options: ["dolgozni","főzni","sétálni","nézni"], answer: "dolgozni" },
+          { id: "l6-t3-e6", type: "image_pick", prompt: "What action is this?",
+            emoji: "🍳", options: ["olvasni","főzni","énekelni","dolgozni"], answer: "főzni" },
+          { id: "l6-t3-e7", type: "image_pick", prompt: "What action is this?",
+            emoji: "📖", options: ["nézni","olvasni","sportolni","énekelni"], answer: "olvasni" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // inni is in [B]. enni is natural companion taught in same context.
+        exercises: [
+          { id: "l6-t4-e1", type: "multiple_choice", prompt: "What does 'inni' mean? (from your lesson 2 notes)",
+            options: ["To eat","To drink","To sleep","To go"], answer: "To drink" },
+          { id: "l6-t4-e2", type: "multiple_choice", prompt: "What does 'enni' mean?",
+            options: ["To drink","To cook","To eat","To walk"], answer: "To eat" },
+          { id: "l6-t4-e3", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Mit szeretsz csinálni?" }, { speaker: "Te", text: "Szeretek ___ és sétálni.", answer: "olvasni" }],
+            answer: "olvasni", options: ["olvasni","enni","inni","főzni"] },
+          { id: "l6-t4-e4", type: "word_order", prompt: "Build: 'I like to eat and drink.'",
+            words: ["és","szeretek","inni","enni"], answer: "szeretek enni és inni",
+            acceptableAnswers: ["szeretek inni és enni"] },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Using conjugation from [E]: főzöl (főz+sz→l), nézed etc.
+        exercises: [
+          { id: "l6-t5-e1", type: "multiple_choice",
+            prompt: "From your verb conjugation notes: főzni ends in 'z'. What is the 'te' (you) indefinite form?",
+            options: ["főzsz","főzöl","főzök","főz"], answer: "főzöl",
+            note: "z + sz → l (the hissing sound rule)" },
+          { id: "l6-t5-e2", type: "multiple_choice",
+            prompt: "What is 'te' form of nézni (indefinite)?",
+            options: ["nézsz","nézöl","nézel","nézed"], answer: "nézel",
+            note: "néz + sz → nézel" },
+          { id: "l6-t5-e3", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Mit főzöl ma este?" }, { speaker: "Te", text: "Levest ___ az anyámmal.", answer: "főzök" }],
+            answer: "főzök", options: ["főzök","főzöl","főz","főzünk"],
+            hint: "én főzök = I cook (indefinite, én form)" },
+          { id: "l6-t5-e4", type: "type_answer", prompt: "Translate: 'I cook soup with my mom.' (leves = soup, anyámmal = with my mom)",
+            answer: "főzök levest az anyámmal",
+            hint: "főzök + levest + az anyámmal (from your notes!)" },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L7 — Free Time & Után  [source: A]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l7",
+    title: "Free Time & After",
+    description: "szabad, mikor vagy szabad?, után",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l7-t1-e1", type: "multiple_choice", prompt: "What does 'szabad' mean here?",
+            options: ["Tired","Free (available)","Happy","Busy"], answer: "Free (available)" },
+          { id: "l7-t1-e2", type: "match_pairs", prompt: "Match each word.",
+            pairs: [["holnap","tomorrow"],["után","after"],["szabad","free"],["fáradt","tired"]] },
+          { id: "l7-t1-e3", type: "multiple_choice", prompt: "What does 'óra után' mean?",
+            options: ["Before class","During class","After class","At the hour"], answer: "After class",
+            note: "óra = lesson / class / hour" },
+          { id: "l7-t1-e4", type: "image_pick", prompt: "Which word matches this?",
+            emoji: "🚶", options: ["séta","munka","tanulás","utazás"], answer: "séta" },
+          { id: "l7-t1-e5", type: "image_pick", prompt: "Which word matches this feeling?",
+            emoji: "😴", options: ["boldog","szabad","fáradt","éhes"], answer: "fáradt" },
+          { id: "l7-t1-e6", type: "image_pick", prompt: "Which word means 'free / available'?",
+            emoji: "🆓", options: ["fáradt","szabad","boldog","beteg"], answer: "szabad" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l7-t2-e1", type: "multiple_choice", prompt: "How do you ask 'When are you free?'",
+            options: ["Holnap szabad vagy?","Mikor vagy szabad?","Mikor utazol?","Szabad vagyok."],
+            answer: "Mikor vagy szabad?" },
+          { id: "l7-t2-e2", type: "multiple_choice", prompt: "How do you say 'after a walk'? (séta = walk)",
+            options: ["séta előtt","séta után","séta közben","séta nélkül"], answer: "séta után" },
+          { id: "l7-t2-e3", type: "multiple_choice", prompt: "How do you say 'I am tired'?",
+            options: ["Szabad vagyok.","Fáradt vagyok.","Szabad vagy?","Holnap vagyok."], answer: "Fáradt vagyok." },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l7-t3-e1", type: "word_order", prompt: "Build: 'After a walk.'",
+            words: ["séta","után"], answer: "séta után" },
+          { id: "l7-t3-e2", type: "type_answer", prompt: "Translate: 'I am free tomorrow.'",
+            answer: "holnap szabad vagyok", acceptableAnswers: ["szabad vagyok holnap"] },
+          { id: "l7-t3-e3", type: "word_order", prompt: "Build: 'I am free tomorrow afternoon.'",
+            words: ["szabad","holnap","vagyok","délután"], answer: "holnap délután szabad vagyok" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // Combining fáradt/boldog [D] with szabad [A] + után [A]
+        exercises: [
+          { id: "l7-t4-e1", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Fáradt vagy séta után?" }, { speaker: "Te", text: "Igen, ___ vagyok.", answer: "fáradt" }],
+            answer: "fáradt", options: ["fáradt","szabad","boldog","éhes"] },
+          { id: "l7-t4-e2", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Szabad vagy holnap?" }, { speaker: "Te", text: "Igen, ___ szabad vagyok.", answer: "délután" }],
+            answer: "délután", options: ["délután","egykor","este","reggel"] },
+          { id: "l7-t4-e3", type: "word_order", prompt: "Build: 'After class tomorrow I am free.'",
+            words: ["szabad","holnap","óra","vagyok","után"], answer: "holnap óra után szabad vagyok" },
+          { id: "l7-t4-e4", type: "type_answer", prompt: "Translate: 'After the walk I am tired and happy.'",
+            answer: "séta után fáradt és boldog vagyok",
+            hint: "séta után + fáradt + és + boldog + vagyok" },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Full dialogue combining everything from [A+D]
+        exercises: [
+          { id: "l7-t5-e1", type: "dialogue",
+            lines: [
+              { speaker: "Anna", text: "Mikor vagy szabad holnap?" },
+              { speaker: "Te", text: "Holnap ___ után szabad vagyok.", answer: "óra" },
+            ],
+            answer: "óra", options: ["óra","séta","este","reggel"], hint: "after class = óra után" },
+          { id: "l7-t5-e2", type: "type_answer", prompt: "Translate: 'When are you free? After the walk at five.'",
+            answer: "mikor vagy szabad? séta után ötkor",
+            hint: "mikor vagy szabad + séta után + ötkor" },
+          { id: "l7-t5-e3", type: "word_order", prompt: "Build: 'I am free tomorrow morning, but in the evening I am tired.'",
+            words: ["de","fáradt","holnap","este","reggel","szabad","vagyok,","vagyok"],
+            answer: "holnap reggel szabad vagyok, de este fáradt vagyok" },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L8 — Food & Drink  [source: B]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l8",
+    title: "Food & Drink",
+    description: "kávé, tea, víz, leves, lángos…",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l8-t1-e1", type: "image_pick", prompt: "What is this?",
+            emoji: "☕", answer: "kávé", options: ["kávé","tea","víz","tej"] },
+          { id: "l8-t1-e2", type: "image_pick", prompt: "What is this?",
+            emoji: "🍵", answer: "tea", options: ["kávé","tea","leves","víz"] },
+          { id: "l8-t1-e3", type: "match_pairs", prompt: "Match each word.",
+            pairs: [["kávé","coffee"],["tej","milk"],["cukor","sugar"],["citrom","lemon"]] },
+          { id: "l8-t1-e4", type: "image_pick", prompt: "What is this?",
+            emoji: "🥛", answer: "tej", options: ["víz","tej","leves","sör"] },
+          { id: "l8-t1-e5", type: "image_pick", prompt: "What is this?",
+            emoji: "💧", answer: "víz", options: ["kávé","tej","víz","leves"] },
+          { id: "l8-t1-e6", type: "image_pick", prompt: "What is this?",
+            emoji: "🍋", answer: "citrom", options: ["cukor","citrom","sajt","tejföl"] },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l8-t2-e1", type: "multiple_choice", prompt: "How do you say 'soup'?",
+            options: ["kenyér","leves","sajt","gomba"], answer: "leves" },
+          { id: "l8-t2-e2", type: "match_pairs", prompt: "Match each word.",
+            pairs: [["leves","soup"],["sajt","cheese"],["tejföl","sour cream"],["jég","ice"]] },
+          { id: "l8-t2-e3", type: "image_pick", prompt: "What is this?",
+            emoji: "🍄", answer: "gomba", options: ["sajt","gomba","citrom","cukor"] },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l8-t3-e1", type: "type_answer", prompt: "What is the Hungarian for 'sugar'?", answer: "cukor" },
+          { id: "l8-t3-e2", type: "type_answer", prompt: "What is the Hungarian for 'sour cream'?",
+            answer: "tejföl", hint: "tej = milk" },
+          { id: "l8-t3-e3", type: "word_order", prompt: "Build: 'coffee with milk and sugar'",
+            words: ["és","kávé","cukorral","tejjel"], answer: "kávé tejjel és cukorral" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // More ordering practice using kér [B] + food [B]
+        exercises: [
+          { id: "l8-t4-e1", type: "dialogue",
+            lines: [{ speaker: "Pincér", text: "Mit kér?" }, { speaker: "Te", text: "Kérek egy ___ tejjel.", answer: "kávét" }],
+            answer: "kávét", options: ["kávét","kávé","kávéban","kávéra"],
+            hint: "kávé + accusative -t" },
+          { id: "l8-t4-e2", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Kérsz teát?" }, { speaker: "Te", text: "Igen, kérek teát ___.", answer: "citrommal" }],
+            answer: "citrommal", options: ["citrommal","citromban","citromot","citromra"] },
+          { id: "l8-t4-e3", type: "word_order", prompt: "Build: 'I would like a goulash soup please.'",
+            words: ["egy","kérek","levest","szépen","gulyás"], answer: "kérek szépen egy gulyás levest" },
+          { id: "l8-t4-e4", type: "type_answer", prompt: "Translate: 'Would you like a coffee?'",
+            answer: "kérsz egy kávét?", acceptableAnswers: ["kérsz egy kávét"] },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Complex ordering using all food + val/vel + kér [B]
+        exercises: [
+          { id: "l8-t5-e1", type: "word_order", prompt: "Build: 'I'd like a coffee with milk and sugar please.'",
+            words: ["tejjel","kérek","egy","cukorral","és","szépen","kávét"],
+            answer: "kérek szépen egy kávét tejjel és cukorral" },
+          { id: "l8-t5-e2", type: "dialogue",
+            lines: [
+              { speaker: "Pincér", text: "Kér valamit?" },
+              { speaker: "Te", text: "Igen, kérem a ___.", answer: "levest" },
+            ],
+            answer: "levest", options: ["levest","leves","levesben","levesre"],
+            hint: "kérem = definite (the soup) → leves + t" },
+          { id: "l8-t5-e3", type: "type_answer", prompt: "Translate: 'I'd like a lángos with sour cream and cheese.'",
+            answer: "kérek egy lángost tejföllel és sajttal",
+            hint: "lángos+t, tejföl+lel, sajt+tal" },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L9 — Kér: Ordering & Asking  [source: B]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l9",
+    title: "Kér — Ordering & Asking",
+    description: "kérek vs. kérem, kérsz, kéred, kér, kéri",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l9-t1-e1", type: "match_pairs", prompt: "Match each form of kér.",
+            pairs: [["kérek","I'd like (indefinite)"],["kérem","I'd like (definite)"],["kérsz","would you like?"],["kéri","he/she wants (def.)"]] },
+          { id: "l9-t1-e2", type: "multiple_choice", prompt: "What does 'kérek' mean?",
+            options: ["I'd like (indefinite)","I'd like (definite)","You'd like","He wants"], answer: "I'd like (indefinite)" },
+          { id: "l9-t1-e3", type: "multiple_choice", prompt: "What does 'kérem' mean?",
+            options: ["I'd like (indefinite)","You'd like","I'd like (polite/definite)","He wants"], answer: "I'd like (polite/definite)" },
+          { id: "l9-t1-e4", type: "image_pick", prompt: "'Kérek egy...' — what are you ordering?",
+            emoji: "☕", options: ["kávét","teát","vizet","levest"], answer: "kávét" },
+          { id: "l9-t1-e5", type: "image_pick", prompt: "'Kérek egy...' — what are you ordering?",
+            emoji: "🍵", options: ["kávét","teát","vizet","sört"], answer: "teát" },
+          { id: "l9-t1-e6", type: "image_pick", prompt: "'Kérem a...' — what are you ordering (definite)?",
+            emoji: "🥣", options: ["kávét","teát","levest","vizet"], answer: "levest" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l9-t2-e1", type: "multiple_choice", prompt: "'I'd like A coffee' (egy = a/an) — which form?",
+            options: ["kérem egy kávét","kérek egy kávét","kérsz egy kávét","kéri egy kávét"],
+            answer: "kérek egy kávét", note: "egy = indefinite → kérek" },
+          { id: "l9-t2-e2", type: "multiple_choice", prompt: "'I'd like THE soup' (a = the) — which form?",
+            options: ["kérek a levest","kérem a levest","kérsz a levest","kéri a levest"],
+            answer: "kérem a levest", note: "a/az = definite → kérem" },
+          { id: "l9-t2-e3", type: "multiple_choice", prompt: "How do you ask 'Would you like a water?'",
+            options: ["kérsz egy vizet?","kérek egy vizet?","kérem egy vizet?","kéri a vizet?"],
+            answer: "kérsz egy vizet?" },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l9-t3-e1", type: "word_order", prompt: "Build: 'I'd like a goulash soup please.'",
+            words: ["egy","kérek","levest","szépen","gulyás"], answer: "kérek szépen egy gulyás levest" },
+          { id: "l9-t3-e2", type: "type_answer", prompt: "Translate: 'Who wants tea?'",
+            answer: "ki kéri a teát?", acceptableAnswers: ["ki kéri a teát"],
+            hint: "ki = who, kéri = definite (the tea), teát = tea+t" },
+          { id: "l9-t3-e3", type: "type_answer", prompt: "Translate: 'Would you like a coffee?'",
+            answer: "kérsz egy kávét?", acceptableAnswers: ["kérsz egy kávét"] },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // Full kér table from [B]: kéred + dialogue practice
+        exercises: [
+          { id: "l9-t4-e1", type: "match_pairs", prompt: "Match ALL forms of kér from your notes.",
+            pairs: [["kérek","I'd like (indef.)"],["kérem","I'd like (def.)"],["kéred","you'd like (def.)"],["kéri","he/she wants (def.)"]] },
+          { id: "l9-t4-e2", type: "dialogue",
+            lines: [{ speaker: "Pincér", text: "Mit kér?" }, { speaker: "Te", text: "___ szépen egy kávét tejjel.", answer: "Kérek" }],
+            answer: "Kérek", options: ["Kérek","Kérem","Kérsz","Kéri"], hint: "egy = indefinite → kérek" },
+          { id: "l9-t4-e3", type: "dialogue",
+            lines: [{ speaker: "Pincér", text: "Mit kér?" }, { speaker: "Te", text: "___ a gulyáslevest.", answer: "Kérem" }],
+            answer: "Kérem", options: ["Kérem","Kérek","Kérsz","Kéri"],
+            hint: "a (the) = definite → kérem" },
+          { id: "l9-t4-e4", type: "type_answer", prompt: "Translate: 'Péter asks for a cola.' (kóla = cola)",
+            answer: "Péter kér egy kólát", hint: "Péter + kér (3rd person indefinite) + egy kólát" },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Full kér conjugation in context + from notes: "ki kéri a teát?"
+        exercises: [
+          { id: "l9-t5-e1", type: "multiple_choice",
+            prompt: "'Péter reggel műzlit kér' — what form is 'kér' here?",
+            options: ["Definite — the muesli","Indefinite — a muesli","Second person","We form"],
+            answer: "Indefinite — a muesli",
+            note: "No article = indefinite. From your lesson notes!" },
+          { id: "l9-t5-e2", type: "word_order", prompt: "Build: 'Péter asks for muesli in the morning.' (műzli = muesli)",
+            words: ["reggel","műzlit","kér","Péter"], answer: "Péter reggel műzlit kér" },
+          { id: "l9-t5-e3", type: "dialogue",
+            lines: [
+              { speaker: "Anna", text: "Kéred a sót?" },
+              { speaker: "Te", text: "Igen, ___.", answer: "kérem" },
+            ],
+            answer: "kérem", options: ["kérem","kérek","kérsz","kéri"],
+            hint: "kéred → kérem (definite, the salt)" },
+          { id: "l9-t5-e4", type: "type_answer", prompt: "Translate: 'Would you like a coffee with sugar?'",
+            answer: "kérsz egy kávét cukorral?", acceptableAnswers: ["kérsz egy kávét cukorral"] },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L10 — With: -val / -vel  [source: B, C]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l10",
+    title: "With: -val / -vel",
+    description: "tejjel, cukorral, barátommal, apával…",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l10-t1-e1", type: "match_pairs", prompt: "Match base word to 'with' form.",
+            pairs: [["tej","tejjel"],["cukor","cukorral"],["citrom","citrommal"],["jég","jéggel"]] },
+          { id: "l10-t1-e2", type: "match_pairs", prompt: "Match pronoun forms.",
+            pairs: [["velem","with me"],["veled","with you"],["vele","with him/her"],["teával","with tea"]] },
+          { id: "l10-t1-e3", type: "multiple_choice", prompt: "What does '-val / -vel' express?",
+            options: ["Without","With","For","From"], answer: "With" },
+          { id: "l10-t1-e4", type: "image_pick", prompt: "Which word means 'with the dog'?",
+            emoji: "🐕", options: ["kutyával","barátommal","apával","anyámmal"], answer: "kutyával" },
+          { id: "l10-t1-e5", type: "image_pick", prompt: "Which word means 'with dad'?",
+            emoji: "👨", options: ["velem","veled","apával","anyámmal"], answer: "apával" },
+          { id: "l10-t1-e6", type: "image_pick", prompt: "Which word means 'with mum'?",
+            emoji: "👩", options: ["apával","barátommal","anyámmal","velem"], answer: "anyámmal" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l10-t2-e1", type: "multiple_choice", prompt: "How do you say 'with lemon'? (citrom)",
+            options: ["citromval","citrommal","citromal","citromban"], answer: "citrommal" },
+          { id: "l10-t2-e2", type: "multiple_choice", prompt: "Why does 'tej' become 'tejjel' not 'tejvel'?",
+            options: ["Random exception","The final consonant doubles","-vel is only for vowels","Vowel harmony"],
+            answer: "The final consonant doubles", note: "tej → tejj + el. cukor → cukorr + al" },
+          { id: "l10-t2-e3", type: "multiple_choice", prompt: "What does 'veled' mean?",
+            options: ["With me","With him","With you","Together"], answer: "With you" },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l10-t3-e1", type: "type_answer", prompt: "Translate: 'with ice' (jég = ice)",
+            answer: "jéggel", hint: "jég ends in g → jégg + el" },
+          { id: "l10-t3-e2", type: "word_order", prompt: "Build: 'I meet with you tomorrow.'",
+            words: ["találkozom","holnap","veled"], answer: "holnap találkozom veled" },
+          { id: "l10-t3-e3", type: "type_answer", prompt: "Translate: 'with milk' (tej)",
+            answer: "tejjel" },
+          { id: "l10-t3-e4", type: "word_order", prompt: "Build: 'I like walking with you.'",
+            words: ["sétálni","szeretek","veled"], answer: "szeretek sétálni veled" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // From [C]: apával, barátommal, kutyával, anyámmal
+        exercises: [
+          { id: "l10-t4-e1", type: "multiple_choice", prompt: "From your reference notes: 'apával' means what?",
+            options: ["With my friend","With my father","With my dog","With my mother"], answer: "With my father" },
+          { id: "l10-t4-e2", type: "match_pairs", prompt: "Match these 'with' forms from your notes.",
+            pairs: [["apával","with (my) father"],["anyámmal","with my mother"],["barátommal","with my friend"],["kutyával","with the dog"]] },
+          { id: "l10-t4-e3", type: "multiple_choice",
+            prompt: "From your notes: 'Sétálok a barátommal.' What does this mean?",
+            options: ["I walk with the dog","I walk with my friend","I cook with my friend","I walk with my mother"],
+            answer: "I walk with my friend" },
+          { id: "l10-t4-e4", type: "type_answer", prompt: "Translate: 'I walk with the dog.' (kutya = dog, sétálok = I walk)",
+            answer: "sétálok a kutyával", hint: "sétálok + a + kutyával" },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Sentences from [C]: Főzök levest az anyámmal, Szeretem a teát cukorral
+        exercises: [
+          { id: "l10-t5-e1", type: "multiple_choice",
+            prompt: "From your notes: 'Főzök levest az anyámmal.' What does this mean?",
+            options: ["I eat soup with my mother","I cook soup with my mother","My mother cooks soup","I'd like soup with my mother"],
+            answer: "I cook soup with my mother" },
+          { id: "l10-t5-e2", type: "multiple_choice",
+            prompt: "From your notes: 'Szeretem a teát cukorral.' What does this mean?",
+            options: ["I drink tea with sugar","I'd like tea with sugar","I like tea with sugar","I have tea with sugar"],
+            answer: "I like tea with sugar" },
+          { id: "l10-t5-e3", type: "word_order", prompt: "Build: 'I cook soup with my mom.'",
+            words: ["az","levest","főzök","anyámmal"], answer: "főzök levest az anyámmal" },
+          { id: "l10-t5-e4", type: "type_answer", prompt: "Translate: 'I walk with my friend.' (barátommal = with my friend)",
+            answer: "sétálok a barátommal", hint: "sétálok + a + barátommal" },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L11 — Ordering Food  [source: B]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l11",
+    title: "Ordering Food",
+    description: "kér + food + -val/-vel in real sentences",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l11-t1-e1", type: "multiple_choice", prompt: "How do you say 'I'd like a coffee with milk and sugar'?",
+            options: ["kérek egy kávét tejjel és cukorral","kérem egy kávét tejjel és cukorral",
+                      "kérek egy kávét tejvel és cukorval","kérsz egy kávét tejjel és cukorral"],
+            answer: "kérek egy kávét tejjel és cukorral" },
+          { id: "l11-t1-e2", type: "multiple_choice", prompt: "How do you say 'tea with lemon'?",
+            options: ["tea citromval","tea citromal","tea citrommal","tea citromban"], answer: "tea citrommal" },
+          { id: "l11-t1-e3", type: "match_pairs", prompt: "Match these combinations from your notes.",
+            pairs: [["kávé tejjel","coffee with milk"],["tea citrommal","tea with lemon"],
+                    ["lángos tejföllel","lángos with sour cream"],["víz jéggel","water with ice"]] },
+          { id: "l11-t1-e4", type: "image_pick", prompt: "What is this Hungarian street food?",
+            emoji: "🥙", options: ["lángos","gulyás","pörkölt","rétes"], answer: "lángos" },
+          { id: "l11-t1-e5", type: "image_pick", prompt: "What is this? (goes in kávé tejjel)",
+            emoji: "🥛", options: ["víz","tej","leves","sör"], answer: "tej" },
+          { id: "l11-t1-e6", type: "image_pick", prompt: "What is this? (jéggel = with this)",
+            emoji: "🧊", options: ["cukor","citrom","jég","tejföl"], answer: "jég" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l11-t2-e1", type: "multiple_choice", prompt: "How do you ask 'Would you like water with ice?'",
+            options: ["kérsz vizet jéggel?","kérek vizet jéggel?","kérsz vizet jégvel?","kérsz vizzel jéget?"],
+            answer: "kérsz vizet jéggel?" },
+          { id: "l11-t2-e2", type: "multiple_choice", prompt: "'lángos with sour cream and cheese' — which is correct?",
+            options: ["lángos tejföllel és sajttal","lángos tejföl és sajt",
+                      "lángos tejföljel és sajtval","lángos tejföl és sajttal"],
+            answer: "lángos tejföllel és sajttal" },
+          { id: "l11-t2-e3", type: "multiple_choice", prompt: "'Yes I want water but NOT with ice.' Which is correct?",
+            options: ["igen kérek vizet de jéggel","igen kérek vizet de nem jéggel",
+                      "igen kérem a vizet de nem jéggel","nem kérek vizet jéggel"],
+            answer: "igen kérek vizet de nem jéggel" },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l11-t3-e1", type: "word_order", prompt: "Build: 'I'd like a tea with lemon please.'",
+            words: ["egy","kérek","citrommal","szépen","teát"], answer: "kérek szépen egy teát citrommal" },
+          { id: "l11-t3-e2", type: "type_answer", prompt: "Translate: 'I don't like water with ice.'",
+            answer: "nem szeretem jéggel a vizet",
+            acceptableAnswers: ["nem szeretem a vizet jéggel"] },
+          { id: "l11-t3-e3", type: "word_order", prompt: "Build: 'I'd like a coffee with milk and sugar please.'",
+            words: ["tejjel","kérek","egy","cukorral","és","szépen","kávét"],
+            answer: "kérek szépen egy kávét tejjel és cukorral" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        exercises: [
+          { id: "l11-t4-e1", type: "dialogue",
+            lines: [{ speaker: "Pincér", text: "Mit kér?" }, { speaker: "Te", text: "Kérek szépen egy teát ___.", answer: "citrommal" }],
+            answer: "citrommal", options: ["citrommal","citromban","citromot","citromra"] },
+          { id: "l11-t4-e2", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Kérsz vizet jéggel?" }, { speaker: "Te", text: "Igen, kérek vizet, de nem ___.", answer: "jéggel" }],
+            answer: "jéggel", options: ["jéggel","jégben","jéget","jégre"] },
+          { id: "l11-t4-e3", type: "word_order", prompt: "Build: 'Would you like to have breakfast with me?'",
+            words: ["velem","reggelizel?"], answer: "velem reggelizel?",
+            note: "reggeli = breakfast, reggelizel = you have breakfast" },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Full complex ordering sentences from [B]
+        exercises: [
+          { id: "l11-t5-e1", type: "dialogue",
+            lines: [
+              { speaker: "Pincér", text: "Mit parancsol?" },
+              { speaker: "Te", text: "Kérek szépen egy kávét ___ és cukorral.", answer: "tejjel" },
+            ],
+            answer: "tejjel", options: ["tejjel","tejben","tejet","tejre"] },
+          { id: "l11-t5-e2", type: "type_answer",
+            prompt: "From your notes: 'I'd like a goulash soup please.'",
+            answer: "kérek szépen egy gulyás levest",
+            hint: "kérek szépen + egy + gulyás levest" },
+          { id: "l11-t5-e3", type: "word_order", prompt: "Build: 'I like tea with sugar.' (Szeretem a teát cukorral — from your notes!)",
+            words: ["cukorral","szeretem","teát","a"], answer: "szeretem a teát cukorral" },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L12 — Lenni: Van  [source: D]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l12",
+    title: "Lenni — Van (To Be)",
+    description: "vagyok, vagy, van, vagyunk, vagytok, vannak",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l12-t1-e1", type: "match_pairs", prompt: "Match each form of 'lenni'.",
+            pairs: [["vagyok","I am"],["vagy","you are"],["van","he/she/it is"],["vagyunk","we are"]] },
+          { id: "l12-t1-e2", type: "match_pairs", prompt: "Match the remaining forms.",
+            pairs: [["vagytok","you (pl.) are"],["vannak","they are"],["vagyok","I am"],["van","he/she is"]] },
+          { id: "l12-t1-e3", type: "multiple_choice",
+            prompt: "Complete: 'Én ___ Anna.' (I am Anna.)",
+            options: ["van","vagy","vagyok","vagyunk"], answer: "vagyok" },
+          { id: "l12-t1-e4", type: "multiple_choice",
+            prompt: "Complete: 'Mi ___ itt.' (We are here.)",
+            options: ["vagyok","vagy","van","vagyunk"], answer: "vagyunk" },
+          { id: "l12-t1-e5", type: "image_pick", prompt: "Which feeling = éhes (hungry)?",
+            emoji: "😋", options: ["éhes","boldog","beteg","fáradt"], answer: "éhes" },
+          { id: "l12-t1-e6", type: "image_pick", prompt: "Which feeling = beteg (sick)?",
+            emoji: "🤒", options: ["boldog","éhes","beteg","fáradt"], answer: "beteg" },
+          { id: "l12-t1-e7", type: "image_pick", prompt: "Which feeling = boldog (happy)?",
+            emoji: "😊", options: ["fáradt","boldog","beteg","éhes"], answer: "boldog" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l12-t2-e1", type: "multiple_choice",
+            prompt: "'Ő orvos.' — why is there NO 'van' here? (orvos = doctor)",
+            options: ["Because Ő is special","Because it's a profession/identity — van is omitted",
+                      "Because the sentence is negative","It's a mistake — van should be there"],
+            answer: "Because it's a profession/identity — van is omitted",
+            note: "Van is omitted with identity, profession, and adjective statements." },
+          { id: "l12-t2-e2", type: "multiple_choice",
+            prompt: "When DO you use 'van/vannak'?",
+            options: ["When saying someone's job","When saying someone is smart",
+                      "For location, existence, or emphasis","With personal pronouns + noun"],
+            answer: "For location, existence, or emphasis" },
+          { id: "l12-t2-e3", type: "multiple_choice",
+            prompt: "'A könyv az asztalon ___.' (The book is on the table.) Which form?",
+            options: ["vagyok","vagy","van","vagyunk"], answer: "van",
+            note: "Location → use van" },
+          { id: "l12-t2-e4", type: "multiple_choice",
+            prompt: "'Ő boldog.' Is this correct without 'van'?",
+            options: ["No — should be 'Ő van boldog'","Yes — adjective statements don't use van","Only in questions","Only with éhes"],
+            answer: "Yes — adjective statements don't use van" },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l12-t3-e1", type: "word_order", prompt: "Build: 'The bag is on the table.' (táska = bag, asztalon = on the table)",
+            words: ["van","az","asztalon","táska","a"], answer: "a táska az asztalon van" },
+          { id: "l12-t3-e2", type: "type_answer", prompt: "Translate: 'Where are you?' (hol = where)",
+            answer: "hol vagy?", acceptableAnswers: ["hol vagy"] },
+          { id: "l12-t3-e3", type: "type_answer", prompt: "Translate: 'I am here!' (itt = here)",
+            answer: "itt vagyok!", acceptableAnswers: ["itt vagyok"] },
+          { id: "l12-t3-e4", type: "word_order", prompt: "Build: 'The children are at school.' (gyerekek = children, iskolában = at school)",
+            words: ["az","vannak","iskolában","a","gyerekek"], answer: "a gyerekek az iskolában vannak" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // Existence sentences from [D]: Van kérdésed, Nincs időm, Van nálad toll
+        exercises: [
+          { id: "l12-t4-e1", type: "multiple_choice",
+            prompt: "What does 'Van kérdésed?' mean? (kérdés = question)",
+            options: ["I have a question","Do you have a question?","Is there a question?","What is your question?"],
+            answer: "Do you have a question?" },
+          { id: "l12-t4-e2", type: "multiple_choice",
+            prompt: "What does 'Nincs időm.' mean? (idő = time, nincs = there is no / don't have)",
+            options: ["I have time","I don't have time","Where is the time?","There is no time here"],
+            answer: "I don't have time" },
+          { id: "l12-t4-e3", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Van kérdésed?" }, { speaker: "Te", text: "Igen, van ___ kérdésem.", answer: "egy" }],
+            answer: "egy", options: ["egy","kettő","három","tíz"],
+            hint: "Van egy kérdésem = I have one question" },
+          { id: "l12-t4-e4", type: "type_answer",
+            prompt: "Translate: 'I don't have time.' (nincs = there is no, időm = my time)",
+            answer: "nincs időm", hint: "nincs + időm" },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // Full mixed practice: identity, location, existence, conditions [D]
+        exercises: [
+          { id: "l12-t5-e1", type: "multiple_choice",
+            prompt: "Which sentence is CORRECT?",
+            options: ["Ő van tanár.","Ő tanár.","Ő vagyok tanár.","Ő vagy tanár."],
+            answer: "Ő tanár.", note: "No van with profession/identity" },
+          { id: "l12-t5-e2", type: "multiple_choice",
+            prompt: "Which sentence is CORRECT?",
+            options: ["A kulcs a zsebemben vagyok.","A kulcs a zsebemben vannak.","A kulcs a zsebemben van.","A kulcs a zseben van."],
+            answer: "A kulcs a zsebemben van." },
+          { id: "l12-t5-e3", type: "word_order", prompt: "Build: 'I am tired but happy.'",
+            words: ["de","boldog","fáradt","vagyok","vagyok"], answer: "fáradt vagyok de boldog vagyok",
+            acceptableAnswers: ["boldog vagyok de fáradt vagyok"] },
+          { id: "l12-t5-e4", type: "type_answer",
+            prompt: "Translate: 'Are you hungry?' (éhes = hungry)",
+            answer: "éhes vagy?", acceptableAnswers: ["éhes vagy"] },
+        ],
+      },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // L13 — Present Tense Verb Conjugation  [source: E]
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "l13",
+    title: "Verb Conjugation",
+    description: "Indefinite & definite endings, all persons",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l13-t1-e1", type: "match_pairs", prompt: "Match INDEFINITE endings (tanulni = to study).",
+            pairs: [["tanulok","I study (én)"],["tanulsz","you study (te)"],["tanul","he/she studies (ő)"],["tanulunk","we study (mi)"]] },
+          { id: "l13-t1-e2", type: "match_pairs", prompt: "Match more indefinite forms.",
+            pairs: [["tanultok","you (pl.) study (ti)"],["tanulnak","they study (ők)"],["tanulok","én"],["tanulsz","te"]] },
+          { id: "l13-t1-e3", type: "multiple_choice",
+            prompt: "What is the indefinite én form of 'tanulni'?",
+            options: ["tanul","tanulsz","tanulok","tanulunk"], answer: "tanulok" },
+          { id: "l13-t1-e4", type: "multiple_choice",
+            prompt: "The indefinite ő (he/she) form has which ending?",
+            options: ["-ok","-sz","no ending — just the stem","-unk"], answer: "no ending — just the stem" },
+          { id: "l13-t1-e5", type: "image_pick", prompt: "This person is studying — which form? (én = I)",
+            emoji: "📚", options: ["tanulok","tanulsz","tanul","tanulunk"], answer: "tanulok" },
+          { id: "l13-t1-e6", type: "image_pick", prompt: "This person is watching TV — which form? (definite, én)",
+            emoji: "📺", options: ["nézem","nézel","nézi","nézzük"], answer: "nézem" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l13-t2-e1", type: "match_pairs", prompt: "Match DEFINITE endings (nézni = to watch).",
+            pairs: [["nézem","I watch (én)"],["nézed","you watch (te)"],["nézi","he/she watches (ő)"],["nézzük","we watch (mi)"]] },
+          { id: "l13-t2-e2", type: "multiple_choice",
+            prompt: "When do you use the DEFINITE conjugation?",
+            options: ["Always with food","When there's no object","When the object is specific (the something)","With adjectives"],
+            answer: "When the object is specific (the something)" },
+          { id: "l13-t2-e3", type: "multiple_choice",
+            prompt: "'Olvasok egy könyvet.' vs 'Olvasom a könyvet.' — what's the difference?",
+            options: ["One is past, one is present","Indefinite = a book, Definite = the book","One is formal, one casual","No difference"],
+            answer: "Indefinite = a book, Definite = the book" },
+          { id: "l13-t2-e4", type: "multiple_choice",
+            prompt: "Which is the correct definite form for 'I watch'?",
+            options: ["nézok","nézem","nézöm","nézel"], answer: "nézem" },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l13-t3-e1", type: "word_order", prompt: "Build: 'I study.' (tanulni, én, indefinite)",
+            words: ["tanulok"], answer: "tanulok" },
+          { id: "l13-t3-e2", type: "multiple_choice",
+            prompt: "Complete: '___ egy könyvet.' (I read a book — indefinite)",
+            options: ["Olvasom","Olvasol","Olvasok","Olvas"], answer: "Olvasok",
+            note: "egy könyvet = a book → indefinite" },
+          { id: "l13-t3-e3", type: "multiple_choice",
+            prompt: "Complete: '___ a könyvet.' (I read the book — definite)",
+            options: ["Olvasok","Olvasom","Olvasol","Olvas"], answer: "Olvasom",
+            note: "a könyvet = the book → definite" },
+          { id: "l13-t3-e4", type: "type_answer",
+            prompt: "What is the indefinite 'te' form of 'tanulni'?",
+            answer: "tanulsz" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        // Definite in context: olvasom, nézed etc. + sentences
+        exercises: [
+          { id: "l13-t4-e1", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Mit csinálsz?" }, { speaker: "Te", text: "___ egy könyvet.", answer: "Olvasok" }],
+            answer: "Olvasok", options: ["Olvasok","Olvasom","Olvasol","Olvas"],
+            hint: "egy könyvet = a book → indefinite" },
+          { id: "l13-t4-e2", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Nézed a filmet?" }, { speaker: "Te", text: "Igen, ___.", answer: "nézem" }],
+            answer: "nézem", options: ["nézem","nézek","nézel","nézi"],
+            hint: "a filmet = the film → definite → nézem" },
+          { id: "l13-t4-e3", type: "word_order", prompt: "Build: 'We study Hungarian.' (magyarul = in Hungarian — here: just a noun)",
+            words: ["tanulunk","magyart"], answer: "magyart tanulunk",
+            note: "magyarT — accusative on the subject" },
+          { id: "l13-t4-e4", type: "type_answer",
+            prompt: "From your notes: 'csinálod a házit' — what person/form is 'csinálod'?",
+            answer: "te — definite",
+            acceptableAnswers: ["te definite","te, definite","2nd person definite","te (definite)"],
+            hint: "csinálod = you do (the homework — specific)" },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        // The sz→l rule from [E]: főzöl, nézel, mosol
+        exercises: [
+          { id: "l13-t5-e1", type: "multiple_choice",
+            prompt: "Verbs ending in s, sz, z, or zs: the -sz te-ending becomes -l. Why?",
+            options: ["Vowel harmony","To avoid two hissing sounds together (e.g. szsz)","Random rule","Only for cooking verbs"],
+            answer: "To avoid two hissing sounds together (e.g. szsz)" },
+          { id: "l13-t5-e2", type: "match_pairs", prompt: "Match these te forms (from your notes).",
+            pairs: [["mosni","mosol"],["főzni","főzöl"],["nézni","nézel"],["érezni","érzel"]] },
+          { id: "l13-t5-e3", type: "dialogue",
+            lines: [{ speaker: "Anna", text: "Mit főzöl ma?" }, { speaker: "Te", text: "Levest ___ az anyámmal.", answer: "főzök" }],
+            answer: "főzök", options: ["főzök","főzöl","főzünk","főz"],
+            hint: "én főzök = I cook (indefinite)" },
+          { id: "l13-t5-e4", type: "type_answer",
+            prompt: "From your notes: 'csinálom azt' — translate this. (azt = it/that)",
+            answer: "I am doing it",
+            acceptableAnswers: ["i am doing it","yes i am doing it"] },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "l14",
+    title: "Question Words",
+    description: "Mikor, Hol, Mennyi, Mivel, Mennyibe kerül, Hogy, Milyen, Mi/Mit, Ki",
+    tiers: [
+      {
+        tier: 1, label: "Recognise",
+        exercises: [
+          { id: "l14-t1-e1", type: "match_pairs", prompt: "Match question word to meaning.",
+            pairs: [["Mikor","when"],["Hol","where"],["Mennyi","how much / how many"],["Mi","what"]] },
+          { id: "l14-t1-e2", type: "match_pairs", prompt: "Match question word to meaning.",
+            pairs: [["Ki","who"],["Hogy","how"],["Milyen","what kind of"],["Mivel","with what / by what means"]] },
+          { id: "l14-t1-e3", type: "multiple_choice", prompt: "What does 'Hol' mean?",
+            options: ["When","Where","Who","How"], answer: "Where" },
+          { id: "l14-t1-e4", type: "multiple_choice", prompt: "What does 'Mennyibe kerül' mean?",
+            options: ["How many?","How are you?","How much does it cost?","With what?"],
+            answer: "How much does it cost?" },
+          { id: "l14-t1-e5", type: "multiple_choice", prompt: "What does 'Mivel' mean?",
+            options: ["Who","When","With what / by what means","What kind of"], answer: "With what / by what means" },
+          { id: "l14-t1-e6", type: "image_pick", prompt: "Which word starts this question? (about the dog's location)",
+            emoji: "🐕", options: ["Hol","Mikor","Mi","Ki"], answer: "Hol" },
+          { id: "l14-t1-e7", type: "image_pick", prompt: "Which word asks about quantity?",
+            emoji: "🍎", options: ["Mikor","Mennyi","Mivel","Milyen"], answer: "Mennyi" },
+          { id: "l14-t1-e8", type: "image_pick", prompt: "Which word asks about time?",
+            emoji: "🕐", options: ["Hol","Ki","Mikor","Hogy"], answer: "Mikor" },
+        ],
+      },
+      {
+        tier: 2, label: "Recall",
+        exercises: [
+          { id: "l14-t2-e1", type: "multiple_choice", prompt: "'___ vagy?' (How are you?) — which word?",
+            options: ["Hol","Mikor","Hogy","Ki"], answer: "Hogy" },
+          { id: "l14-t2-e2", type: "multiple_choice", prompt: "'___ laksz?' (Where do you live?) — which word?",
+            options: ["Mikor","Mi","Hol","Ki"], answer: "Hol" },
+          { id: "l14-t2-e3", type: "multiple_choice", prompt: "'___ jössz haza?' (When are you coming home?) — which word?",
+            options: ["Hol","Mikor","Mivel","Mennyi"], answer: "Mikor" },
+          { id: "l14-t2-e4", type: "multiple_choice", prompt: "'___ mész iskolába?' (By what means are you going to school?) — which word?",
+            options: ["Milyen","Hogy","Mivel","Ki"], answer: "Mivel" },
+          { id: "l14-t2-e5", type: "multiple_choice", prompt: "'___ a kedvenc tanárod?' (Who is your favourite teacher?) — which word?",
+            options: ["Mi","Milyen","Ki","Mennyi"], answer: "Ki" },
+          { id: "l14-t2-e6", type: "multiple_choice", prompt: "'___ alma van az asztalon?' (How many apples are on the table?) — which word?",
+            options: ["Milyen","Hogy","Mivel","Mennyi"], answer: "Mennyi" },
+          { id: "l14-t2-e7", type: "match_pairs", prompt: "Match question word to what it asks about.",
+            pairs: [["Ki?","a person"],["Hol?","a place"],["Mikor?","a time"],["Mennyi?","a quantity"]] },
+        ],
+      },
+      {
+        tier: 3, label: "Produce",
+        exercises: [
+          { id: "l14-t3-e1", type: "word_order", prompt: "Build: 'Where is the dog?' (from your homework)",
+            words: ["van","Hol","kutya","a"], answer: "Hol van a kutya" },
+          { id: "l14-t3-e2", type: "word_order", prompt: "Build: 'When are you coming home?' (from your homework)",
+            words: ["jössz","Mikor","haza"], answer: "Mikor jössz haza" },
+          { id: "l14-t3-e3", type: "type_answer", prompt: "Translate: 'How are you?'",
+            answer: "Hogy vagy", hint: "Hogy + vagy?" },
+          { id: "l14-t3-e4", type: "type_answer", prompt: "Translate: 'Who is she/he?' (ő = she/he)",
+            answer: "Ki ő", hint: "Ki + ő?" },
+          { id: "l14-t3-e5", type: "type_answer", prompt: "Translate: 'When do you work?' (dolgozol = you work)",
+            answer: "Mikor dolgozol", hint: "Mikor + dolgozol?" },
+          { id: "l14-t3-e6", type: "type_answer", prompt: "Translate: 'What are you eating?' (mit = what (accusative), eszel = you eat)",
+            answer: "Mit eszel", hint: "Mit + eszel?" },
+        ],
+      },
+      {
+        tier: 4, label: "Converse",
+        exercises: [
+          { id: "l14-t4-e1", type: "dialogue",
+            answer: "Hol", options: ["Hol","Mikor","Ki","Milyen"],
+            lines: [
+              { speaker: "Barát", text: "___ laksz?" },
+              { speaker: "Te", text: "Budapesten lakom." },
+            ] },
+          { id: "l14-t4-e2", type: "dialogue",
+            answer: "Mennyibe", options: ["Mennyibe","Hogy","Mivel","Mennyi"],
+            lines: [
+              { speaker: "Eladó", text: "Tessék?" },
+              { speaker: "Te", text: "___ kerül ez?" },
+              { speaker: "Eladó", text: "Ezer forint." },
+            ] },
+          { id: "l14-t4-e3", type: "dialogue",
+            answer: "Mivel", options: ["Mivel","Mikor","Hol","Ki"],
+            lines: [
+              { speaker: "Barát", text: "___ mész iskolába?" },
+              { speaker: "Te", text: "Busszal megyek." },
+            ] },
+          { id: "l14-t4-e4", type: "dialogue",
+            answer: "Mi", options: ["Mi","Ki","Hogy","Mennyi"],
+            lines: [
+              { speaker: "Barát", text: "___ van ma?" },
+              { speaker: "Te", text: "Ma kedd van." },
+            ] },
+          { id: "l14-t4-e5", type: "word_order", prompt: "Build: 'What kind of person is he/she?' (ember = person, ő = he/she)",
+            words: ["ember","Milyen","ő"], answer: "Milyen ember ő" },
+        ],
+      },
+      {
+        tier: 5, label: "Master",
+        exercises: [
+          { id: "l14-t5-e1", type: "type_answer",
+            prompt: "Translate: 'How much does this book cost?' (ez = this, könyv = book, a = the)",
+            answer: "Mennyibe kerül ez a könyv", hint: "Mennyibe kerül ez a könyv?" },
+          { id: "l14-t5-e2", type: "type_answer",
+            prompt: "Translate: 'How do you go to Budapest?' (mész = you go, Budapestre = to Budapest)",
+            answer: "Mivel mész Budapestre", hint: "Mivel + mész + Budapestre?" },
+          { id: "l14-t5-e3", type: "word_order",
+            prompt: "Build: 'How many apples are on the table?' (alma = apple, asztalon = on the table)",
+            words: ["alma","Mennyi","van","asztalon"], answer: "Mennyi alma van asztalon" },
+          { id: "l14-t5-e4", type: "type_answer",
+            prompt: "Translate: 'What are you doing?' (mit = what (acc.), csinálsz = you do/make)",
+            answer: "Mit csinálsz", hint: "Mit + csinálsz?" },
+          { id: "l14-t5-e5", type: "dialogue",
+            answer: "Milyen", options: ["Milyen","Mennyi","Mivel","Hogy"],
+            lines: [
+              { speaker: "Te", text: "___ autód van?" },
+              { speaker: "Barát", text: "Piros autóm van!" },
+            ] },
+          { id: "l14-t5-e6", type: "type_answer",
+            prompt: "Translate: 'What is today?' (ma = today, van = is)",
+            answer: "Mi van ma", hint: "Mi + van + ma?" },
+        ],
+      },
+    ],
+  },
+
+];
