@@ -1,6 +1,6 @@
 const TIER_LABELS = ["Recognise", "Recall", "Produce", "Converse", "Master"];
 
-export default function HomeScreen({ lessons, progress, tiersCompleted, nextTier, isUnlocked, onSelect }) {
+export default function HomeScreen({ lessons, progress, tiersCompleted, nextTier, isUnlocked, onSelect, onAsk, onChat }) {
   const totalTiers = lessons.length * 5;
   const doneTiers  = lessons.reduce((sum, l) => sum + tiersCompleted(l.id).length, 0);
 
@@ -13,6 +13,21 @@ export default function HomeScreen({ lessons, progress, tiersCompleted, nextTier
           <p className="home-progress-summary">{doneTiers} / {totalTiers} tiers completed</p>
         )}
       </header>
+
+      <div className="home-mode-buttons">
+        <button className="home-mode-btn home-mode-ask" onClick={onAsk}>
+          <span className="home-mode-icon">💬</span>
+          <span className="home-mode-label">Ask</span>
+          <span className="home-mode-sub">Questions about grammar</span>
+        </button>
+        <button className="home-mode-btn home-mode-chat" onClick={onChat}>
+          <span className="home-mode-icon">🗣️</span>
+          <span className="home-mode-label">Chat</span>
+          <span className="home-mode-sub">Talk with Sára in Hungarian</span>
+        </button>
+      </div>
+
+      <p className="home-section-label">Lessons</p>
 
       <div className="lesson-list">
         {lessons.map((lesson, idx) => {

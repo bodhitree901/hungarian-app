@@ -4,6 +4,8 @@ import { useProgress } from "./hooks/useProgress";
 import HomeScreen from "./components/HomeScreen";
 import ExerciseEngine from "./components/ExerciseEngine";
 import LessonComplete from "./components/LessonComplete";
+import AskMode from "./components/AskMode";
+import ConversationMode from "./components/ConversationMode";
 
 export default function App() {
   const { progress, completeTier, resetProgress, tiersCompleted, nextTier, isUnlocked } = useProgress();
@@ -43,8 +45,13 @@ export default function App() {
           nextTier={nextTier}
           isUnlocked={isUnlocked}
           onSelect={startLesson}
+          onAsk={() => setView("ask")}
+          onChat={() => setView("chat")}
         />
       )}
+
+      {view === "ask" && <AskMode onBack={goHome} />}
+      {view === "chat" && <ConversationMode onBack={goHome} />}
 
       {view === "lesson" && activeLesson && tierData && (
         <>
